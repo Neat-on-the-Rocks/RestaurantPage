@@ -14,6 +14,7 @@ export function cocktails() {
     content.classList.add('content');
 
     function show_image(cocktailName, src, alt, div) {
+        const box = document.createElement('div');
         var title = document.createElement("h3");
         title.textContent = cocktailName;
         var img = document.createElement("img");
@@ -22,8 +23,10 @@ export function cocktails() {
         img.height = 500;
         img.alt = alt;
     
-        div.appendChild(title);
-        div.appendChild(img);
+        box.appendChild(title);
+        box.appendChild(img);
+
+        div.appendChild(box)
     }
 
     const whiskeyCocktails = document.createElement('div');

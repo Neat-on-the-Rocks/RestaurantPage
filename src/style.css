@@ -1,3 +1,6 @@
+body{
+    background-color: bisque;
+}
 .header {
     color: brown;
     display: flex;
@@ -7,4 +10,15 @@
   .header > img{
     height: 100px;
     width: 100px;
+  }
+
+  .content > div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .content > div > img{
+    display: flex;
+    height: 50px;
+    width: 50px;
   }
