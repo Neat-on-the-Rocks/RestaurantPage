@@ -2,7 +2,7 @@
 
 export function contact() {
     const content = document.createElement('div');
-    content.classList.add('content');
+    content.classList.add('contact-content');
 
     const contactHeader = document.createElement('h2')
 
@@ -23,7 +23,6 @@ export function contact() {
     contactDetails.appendChild(address);
     contactDetails.appendChild(email);
 
-    content.textContent = "Content Works: Contact";
     content.appendChild(contactHeader);
     content.appendChild(contactDetails);
 
