@@ -23,6 +23,11 @@ body{
     width: 50px;
   }
 
-  .contact-content{
+  .contact-content, .about-content{
     text-align: center;
+  }
+
+  .contact-content{
+    border: 5px solid brown;
+    border-radius: 15px;
   }
