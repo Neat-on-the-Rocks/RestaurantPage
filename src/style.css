@@ -1,10 +1,10 @@
-.content {
+.header {
     color: brown;
     display: flex;
     align-items: center;
     background-color: bisque;
   }
-  .content > img{
+  .header > img{
     height: 100px;
     width: 100px;
   }
