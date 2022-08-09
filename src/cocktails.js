@@ -1,33 +1,56 @@
 import oldFashioned from './cocktails/oldFashioned.png';
 import newYorkSour from './cocktails/newYorkSour.jpg';
-/*import appleTini from './cocktails/appletini.jpg';
+import appleTini from './cocktails/appletini.jpg';
 import espressoMartini from './cocktails/espressoMartini.jpg';
 import mojito from './cocktails/mojito.jpg';
 import jamaicanParadise from './cocktails/jamaicanParadise.jpg';
 import negroni from './cocktails/negroni.jpg';
 import singaporeSling from './cocktails/singaporeSling.jpg';
 import caddilacMargarita from './cocktails/caddilacMargarita.jpg';
-import tequilaSunrise from './cocktails/tequilaSunrise.webp';*/
+import tequilaSunrise from './cocktails/tequilaSunrise.png';
 
 export function cocktails() {
     const content = document.createElement('div');
     content.classList.add('content');
 
-    //Create Factory Function
-
-    function show_image(src, width, height, alt) {
+    function show_image(cocktailName, src, alt, div) {
+        var title = document.createElement("h3");
+        title.textContent = cocktailName;
         var img = document.createElement("img");
         img.src = src;
-        img.width = width;
-        img.height = height;
+        img.width = 500;
+        img.height = 500;
         img.alt = alt;
     
-        // This next line will just add it to the <body> tag
-        return content.appendChild(img);
+        div.appendChild(title);
+        div.appendChild(img);
     }
 
-    show_image(oldFashioned, 500, 500, 'Old Fashioned');
-    show_image(newYorkSour, 500, 500, "New York Sour")
+    const whiskeyCocktails = document.createElement('div');
+    show_image('Old Fashioned', oldFashioned, 'Old Fashioned', whiskeyCocktails)
+    show_image('New York Sour', newYorkSour, "New York Sour", whiskeyCocktails)
+    content.appendChild(whiskeyCocktails);
+
+    const vodkaCocktails = document.createElement('div');
+    show_image('Appletini', appleTini, '', vodkaCocktails);
+    show_image('Espresso Martini', espressoMartini, '', vodkaCocktails);
+    content.appendChild(vodkaCocktails);
+
+
+    const rumCocktails = document.createElement('div');
+    show_image('Mojito', mojito, '', rumCocktails);
+    show_image('Jamaican Paridise', jamaicanParadise, '', rumCocktails);
+    content.appendChild(rumCocktails);
+
+    const ginCocktails = document.createElement('div');
+    show_image('Negroni', negroni, '', ginCocktails);
+    show_image('Singapore Sling', singaporeSling, '', ginCocktails);
+    content.appendChild(ginCocktails);
+
+    const tequilaCocktails = document.createElement('div');
+    show_image('Cadillac Margarita', caddilacMargarita, '', tequilaCocktails);
+    show_image('Tequila Sunrise', tequilaSunrise, '', tequilaCocktails);
+    content.appendChild(tequilaCocktails);
 
     return content
 }
