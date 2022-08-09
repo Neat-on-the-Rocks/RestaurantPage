@@ -9,27 +9,25 @@ import singaporeSling from './cocktails/singaporeSling.jpg';
 import caddilacMargarita from './cocktails/caddilacMargarita.jpg';
 import tequilaSunrise from './cocktails/tequilaSunrise.webp';*/
 
-
 export function cocktails() {
     const content = document.createElement('div');
     content.classList.add('content');
 
-    //Render Whiskey Cocktail Images
-    const whiskeyCocktails = document.createElement('div');
+    //Create Factory Function
 
-    const oldFashionedImg = new Image();
-    oldFashionedImg.src = oldFashioned;
+    function show_image(src, width, height, alt) {
+        var img = document.createElement("img");
+        img.src = src;
+        img.width = width;
+        img.height = height;
+        img.alt = alt;
+    
+        // This next line will just add it to the <body> tag
+        return content.appendChild(img);
+    }
 
-    const newYorkSourImg = new Image();
-    newYorkSourImg.src = newYorkSour;
-
-    whiskeyCocktails.appendChild(oldFashionedImg);
-    whiskeyCocktails.appendChild(newYorkSourImg);
-
-
-
-    content.textContent = "Content Works: Cocktails"
-    content.appendChild(whiskeyCocktails)
+    show_image(oldFashioned, 500, 500, 'Old Fashioned');
+    show_image(newYorkSour, 500, 500, "New York Sour")
 
     return content
 }
