@@ -5,9 +5,25 @@ import {cocktails} from './cocktails'
 import {contact} from './contact'
 
 
+const firstLoad = () =>{
+    document.body.appendChild(header());
+    document.body.appendChild(about());
+}
 
 
-document.body.appendChild(header());
-document.body.appendChild(about());
-document.body.appendChild(cocktails());
-document.body.appendChild(contact());
+const aboutLoad = () => {
+    document.body.appendChild(header());
+    document.body.appendChild(about());
+}
+
+const cocktailLoad = () => {
+    document.body.appendChild(header());
+    document.body.appendChild(cocktails());
+}
+
+const contactLoad = () => {
+    document.body.appendChild(header());
+    document.body.appendChild(contact());
+}
+
+firstLoad();
