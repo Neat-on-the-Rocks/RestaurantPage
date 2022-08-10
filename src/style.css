@@ -5,11 +5,33 @@ body{
     color: brown;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     background-color: bisque;
   }
-  .header > img{
+
+  .header > div > img{
     height: 100px;
     width: 100px;
+  }
+
+  .header-left{
+    display: flex;
+    align-items: center;
+  }
+
+  nav{
+    display: flex;
+    justify-content: space-around;
+
+  }
+
+  nav > button{
+    padding: 20px;
+    border: none;
+    background: none; 
+    text-decoration: underline;  
+    color: brown;
+    font-size: 20px;
   }
 
   .content > div{
