@@ -1,26 +1,30 @@
 import Logo from './oldFashioned.png'
 
-// function createNav() {
-//     const nav = document.createElement("nav");
-  
-//     const homeButton = document.createElement("button");
-//     homeButton.classList.add("button-nav");
-//     homeButton.textContent = "About";
+//
+import {about} from './about.js'
+import {cocktails} from './cocktails'
+import {contact} from './contact'
 
-//     const menuButton = document.createElement("button");
-//     menuButton.classList.add("button-nav");
-//     menuButton.textContent = "Cocktails";
-  
-//     const contactButton = document.createElement("button");
-//     contactButton.classList.add("button-nav");
-//     contactButton.textContent = "Contact";
-  
-//     nav.appendChild(homeButton);
-//     nav.appendChild(menuButton);
-//     nav.appendChild(contactButton);
-  
-//     return nav;
-//   }
+
+const aboutLoad = () => {
+    document.body.textContent="";
+    document.body.appendChild(header());
+    document.body.appendChild(about());
+}
+
+const cocktailLoad = () => {
+    document.body.textContent="";
+    document.body.appendChild(header());
+    document.body.appendChild(cocktails());
+}
+
+const contactLoad = () => {
+    document.body.textContent="";
+    document.body.appendChild(header());
+    document.body.appendChild(contact());
+}
+
+//
 
 function leftHeader() {
     const headerLeft = document.createElement('div');
@@ -44,14 +48,23 @@ function rightHeader() {
     const homeButton = document.createElement("button");
     homeButton.classList.add("button-nav");
     homeButton.textContent = "About";
+    homeButton.addEventListener('click', function(event){
+        aboutLoad();
+     });
 
     const menuButton = document.createElement("button");
     menuButton.classList.add("button-nav");
     menuButton.textContent = "Cocktails";
+    menuButton.addEventListener('click', function(event){
+        cocktailLoad();
+     });
   
     const contactButton = document.createElement("button");
     contactButton.classList.add("button-nav");
     contactButton.textContent = "Contact";
+    contactButton.addEventListener('click', function(event){
+        contactLoad();
+     });
   
     nav.appendChild(homeButton);
     nav.appendChild(menuButton);
